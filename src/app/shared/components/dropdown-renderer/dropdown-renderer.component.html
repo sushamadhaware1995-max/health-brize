@@ -1,0 +1,3 @@
+<select (change)="selectValue($event)" [(ngModel)]="selected.value" [disabled]="selected.value === 'delivered' || selected.value === 'canceled'">
+    <option *ngFor="let value of values" [value]="value.value" >{{value.displayName}}</option>
+</select>

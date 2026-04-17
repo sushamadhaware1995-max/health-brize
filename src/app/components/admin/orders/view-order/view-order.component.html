@@ -1,0 +1,80 @@
+<main>
+    <div class="modal-content">
+        <div class="modal-title">
+            <h2>{{title}}</h2>
+            <mat-icon class="close_icon" (click)="closeDialog()">close</mat-icon>
+        </div>
+        <form  [formGroup]="form" class="modal-body">
+            <div class="input-fields-container">
+                <div class="row">
+                    <fieldset>
+                        <legend>Product Details:</legend>
+                        <div class="input-fields-wrapper">
+                            <div class="input-field">
+                                <label for="status">Status</label>
+                                <input type="text" placeholder="Enter name" formControlName="status" id="status">
+                            </div>
+                            <div class="input-field">
+                                <label for="productName">Product Name</label>
+                                <input type="text" placeholder="Enter name" formControlName="productName" id="productName">
+                            </div>
+                            <div class="input-field">
+                                <label for="quantity">Quantity</label>
+                                <input type="text" placeholder="Enter name" formControlName="quantity" id="quantity">
+                            </div>
+                            <div class="input-field">
+                                <label for="category">Category</label>
+                                <input type="text" placeholder="Enter name" formControlName="category" id="category">
+                            </div>
+                            <div class="input-field">
+                                <label for="purity">Purity</label>
+                                <input type="text" placeholder="Enter name" formControlName="purity" id="purity">
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>User Details:</legend>
+                        <div class="input-fields-wrapper">
+                            <div class="input-field">
+                                <label for="name">Name</label>
+                                <input type="text" placeholder="Enter name" formControlName="name" id="name">
+                            </div>
+                            <div class="input-field">
+                                <label for="phone">Phone</label>
+                                <input type="text" placeholder="Enter Mobile number" formControlName="phone" id="phone" maxlength="10" required>
+                            </div>
+                            <div class="input-field">
+                                <label for="email">Email ID</label>
+                                <input type="email" id="email" placeholder="Enter email address" formControlName="email" required>
+                            </div>
+                            <div class="input-field">
+                                <label for="address">Address</label>
+                                <input type="text" placeholder="Enter Address" formControlName="address" id="address">
+                            </div>
+                            <div class="input-field">
+                                <label for="pincode">Pincode</label>
+                                <input type="number" placeholder="Enter pincode" formControlName="pincode" id="pincode">
+                            </div>
+                            <div class="input-field">
+                                <label for="city">City</label>
+                                <input type="text" placeholder="Enter city" formControlName="city" id="city">
+                            </div>
+                            <div class="input-field">
+                                <label for="state">State</label>
+                                <input type="text" placeholder="Enter state" formControlName="state" id="state">
+                            </div>
+                            <div class="input-field">
+                                <label for="country">Country</label>
+                                <input type="text" placeholder="Enter country" formControlName="country" id="country">
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="action-buttons" >
+                <button class="btn btn-secondary" type="button" (click)="closeDialog()">Close</button>
+                <button *ngIf="!currentAction" class="btn btn-primary" type="submit">Add User</button>
+            </div>
+        </form>
+    </div>
+</main>

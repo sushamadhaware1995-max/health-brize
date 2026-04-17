@@ -1,0 +1,97 @@
+<main>
+    <div class="modal-content">
+      <div class="modal-title">
+        <h2>{{title}}</h2>
+        <mat-icon class="close_icon" (click)="closeDialog()">close</mat-icon>
+      </div>
+      <app-loader [isLoading]="isLoading"></app-loader>
+      <form  [formGroup]="productForm" (ngSubmit)="onSubmit(productForm.value)" class="modal-body">
+        <div class="input-fields-container">
+          <div class="row">
+            <fieldset>
+              <legend>Product Details:</legend>
+              <div class="input-fields-wrapper">
+                <div class="input-field">
+                  <label for="name">Name</label>
+                  <input type="text" placeholder="Name" formControlName="name" id="name">
+                </div>
+                <div class="input-field">
+                  <label for="description">Description</label>
+                  <input type="text" placeholder="Description" formControlName="description" id="description">
+                </div>
+                <div class="input-field">
+                    <label for="code">Product Code</label>
+                    <input type="text" placeholder="Product Code" formControlName="code" id="code">
+                </div>
+                <div class="input-field">
+                    <label for="code">Select Category</label>
+                    <select formControlName="categoryId" id="code" (change)="selectedCategory($event)">
+                        <option *ngFor="let category of categories" [value]="category._id">{{category.name}}</option>
+                    </select>
+                </div>
+                <div class="input-field">
+                  <label for="code">Select SubCategory</label>
+                  <select formControlName="subCategoryId" id="code">
+                      <option *ngFor="let subCategory of subCategories" [value]="subCategory._id">{{subCategory.name}}</option>
+                  </select>
+              </div>
+                <div class="input-field">
+                  <label for="purity">Purities</label>
+                  <select formControlName="purities" id="purity">
+                    <option *ngFor="let purity of purities" [value]="purity">{{purity}}</option>
+                  </select>
+                </div>
+                <div class="input-field">
+                    <label for="quantity">Stock Quantity</label>
+                    <input type="number" placeholder="Stock Quantity" formControlName="availableQuantity" id="quantity">
+                </div>
+                <div class="input-field">
+                    <label for="weight">Weight</label>
+                    <input type="number" placeholder="Weight" formControlName="weight" id="weight">
+                </div>
+                <div class="input-field">
+                    <label for="unitName">Select Unit</label>
+                    <select formControlName="unitName" id="unitName">
+                        <ng-container *ngFor="let unit of units">
+                            <option *ngIf="unit.visible" [value]="unit.value">{{unit.displayName}}</option>
+                        </ng-container>
+                    </select>
+                </div>
+                <div class="input-field" *ngIf="modaldata.action !== 'viewOnly'">
+                    <input type="file" id="upload" accept="image/*" (change)="onSelectFile($event)" hidden/>
+                    <label for="unitName">Upload Icon</label>
+                    <label for="upload" class="upload">
+                      <mat-icon>cloud_upload</mat-icon>
+                    </label>
+                </div>
+                <!-- <div class="input-field" *ngIf="modaldata.action !== 'viewOnly'">
+                    <input type="file" id="uploadImage" accept="image/*" (change)="onSelectImages($event)" hidden/>
+                    <label for="unitName">Upload Pictures</label>
+                    <label for="uploadImage" class="upload" >
+                      <mat-icon>cloud_upload</mat-icon>
+                    </label>
+                    <button type="button" class="upload-button" (click)="upload()">Upload</button>
+                </div> -->
+                <div class="image_preview" *ngIf="imageFile">
+                  <img [src]="imageFile" alt="product" />
+                </div>
+                <div class="image_preview" *ngIf="imagePreview">
+                  <img [src]="imagePreview" alt="product" />
+                </div>
+                <div class="input-field list">
+                  <input type="checkbox" placeholder="Description" formControlName="isListed" id="list">
+                  <span>List Product</span>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+        <div class="action-buttons" >
+          <button class="btn btn-secondary" type="button" (click)="closeDialog()">{{cancelButtonText}}</button>
+          <button *ngIf="!currentAction" class="btn btn-primary" type="submit">{{buttonText}}</button>
+        </div>
+      </form>
+    </div>
+  </main>
+  
+  

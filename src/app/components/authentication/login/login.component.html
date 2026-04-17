@@ -1,0 +1,68 @@
+<app-loader [isLoading]="isLoading"></app-loader>
+<div class="login-container"> 
+    <div class="login_wrapper">
+        <div class="main_logo_div">
+            <div class="logo_div">
+                <img class="logo_img_div" src="../assets/images/sph-logo.png" >
+            </div>
+        </div>
+
+        <div class="login_info_div">
+            <div class="login_form_div">
+                <div class="welcome_msg_div">
+                    <p class="greet">Welcome to SPH Ornaments</p>
+                    <p class="sub-greet">{{isLoginBtnClicked ? 'Enter OTP sent on +91-' + phoneNumber : 'Hey Admin, Welcome Back!'}}</p>
+                </div>
+                
+                <ng-container *ngIf="!isLoginBtnClicked">
+                    <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" class="form-container">
+                        <div  class="input-container">
+                            <input type="number" class="custom-input" id="floatingInput"
+                            placeholder="Mobile number" 
+                            formControlName="phone" 
+                            maxlength="10" 
+                            autocomplete="true"
+                            pattern="[0-9]{10}"
+                            required>
+                            <div *ngIf="f.phone.touched && f.phone.invalid" class="text-danger mt-1">
+                                <div *ngIf="f.phone.errors && f.phone.errors.required" class="error_msg">Mobile Number is Required.</div>
+                                <div *ngIf="f.phone.errors && f.phone.errors.maxlength" class="error_msg">Mobile must have 10 digits.</div>
+                                <div *ngIf="f.phone.errors && f.phone.errors.minlength" class="error_msg">Mobile must have 10 digits.</div>
+                            </div> 
+                        </div>
+
+                        <div class="action-button-container">
+                            <button type="submit" class="btn btn-primary">
+                                <span >Login</span>
+                            </button>
+                        </div>
+                    </form>
+                </ng-container>
+                
+                <div *ngIf="isLoginBtnClicked" class="input-container">
+                    <form [formGroup]="otpForm" (ngSubmit)="onOtpFormSubmit(otpForm.value)"  class="input-wrapper">
+                        <div class="input-field">
+                            <input #field1 (keyup)="gotoNextField(field1, field2, $event)" type="tel" formControlName="digit1" maxlength=1>
+                            <input #field2 (keyup)="gotoNextField(field1, field3, $event)" type="tel" formControlName="digit2" maxlength=1>
+                            <input #field3 (keyup)="gotoNextField(field2, field4, $event)" type="tel" formControlName="digit3" maxlength=1>
+                            <input #field4 (keyup)="gotoNextField(field3, field5, $event)" type="tel" formControlName="digit4" maxlength=1>
+                            <input #field5 (keyup)="gotoNextField(field4, field6, $event)" type="tel" formControlName="digit5" maxlength=1>
+                            <input #field6 (keyup)="gotoNextField(field5, field6, $event)" type="tel" formControlName="digit6" maxlength=1>
+                        </div>
+                        <p *ngIf="!showResendButton" class="resend_otp_msg">
+                            Resend OTP in <span class="count_span">{{counter}} sec</span> 
+                        </p>
+                        <div *ngIf="showResendButton" class="resend_otp_button" (click)="requestOTP(phoneNumber)">
+                            RESEND OTP
+                        </div>
+                        <div class="action-button-container">
+                            <button type="submit" class="btn btn-primary">
+                                <span>Verify OTP</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>    
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<app-loader [isLoading]="isLoading"></app-loader>
+<div class="side_nav_container">
+    <div class="side_nav_panel">
+        <section class="two-column-layout">
+            <div class="logo_div">
+                <img class="logo_img_div" src="../../../../assets/images/sph-logo.png" height="40px">
+            </div>
+            <div class="profile_div">
+                <div class="user_profile">
+                    <p><mat-icon>account_circle</mat-icon>{{adminProfile?.data.role | uppercase}}</p>
+                    <mat-icon [matMenuTriggerFor]="menu">expand_more</mat-icon>
+                </div>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item (click)="logout()">Logout<mat-icon class="logout-icon">logout</mat-icon></button>
+                </mat-menu>
+            </div>
+        </section>
+    </div>
+</div>

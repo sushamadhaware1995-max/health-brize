@@ -1,0 +1,299 @@
+@import '../../../../assets/theme/variables.scss';
+@import '../../../../assets/theme/mixins.scss';
+
+.login-container{
+    height: 100vh;
+
+    .login_wrapper{
+        @include flex(unset, unset, unset, row);
+        height: inherit;
+        
+        .main_logo_div{
+            @include flex(center, center, nowrap, column);
+            background-color: $primary-color;
+            width:50%;
+
+            .logo_div{
+                text-align:center;
+                width:280px;
+
+                .logo_img_div{
+                    object-fit: contain;
+                    width: 100%;
+                }
+            }
+        }
+
+        .login_info_div{
+            @include flex(center, center, nowrap, column);
+            background-color: $tertiary-color;
+            width:50%;
+
+            .welcome_msg_div{
+                color: $primary-color;
+                font-weight: 400;
+
+                .greet{
+                    font-size: 3vw;
+                    font-weight: 300;
+                    padding-bottom: 5px;
+                    text-align: center;
+                }
+
+                .sub-greet{
+                    font-size: 1.2rem;
+                    margin-top: 20px;
+                }
+            }
+
+            .login_form_div{
+             
+                .input-container{
+                    position: relative;
+
+                    input[type=number] {
+                        box-sizing: border-box;
+                        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+                        border-radius: 4px ;
+                        border: none;
+                        font-weight: 400;
+                        font-size: 16px;
+                        margin: 8px 0;
+                        padding:  15px;
+                        width: 100%;
+                    }
+
+                    .text-danger{
+                        position: absolute;
+                        bottom: -15px;
+                        right: 0;
+
+                        .error_msg{
+                            color: $danger;
+                            font-size: small;
+                        }
+                    }
+                }
+
+                .action-button-container{
+                    margin-top: 18px;
+
+                    .btn{
+                        padding: 14px;
+                        margin-left: 0;
+                        width: 100%;
+                    }
+                }
+
+                .input-container{
+                    position: relative;
+
+                    .resend_otp_msg{
+                        color: $primary-color;
+                        font-size: 12px;
+                        text-align: center;
+
+                        .count_span{
+                            font-weight: 500;
+                        }
+                    }
+
+                    .resend_otp_button{
+                        color: $primary-color; 
+                        font-size: 12px;
+                        font-weight: bold;
+                    }
+
+                    .input-wrapper{
+                        width: 100%;
+
+                        .input-field{
+                            @include flex(center, space-between, nowrap, row);
+                            margin-bottom: 36px;
+                            padding-top: 5px;
+
+                            input[type="tel"]{
+                                width: 30px;
+                                height: 30px;
+                                padding: 10px;
+                                margin-left: 5px;
+                                box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+                                border-radius: 4px;
+                                border:none;
+                                text-align: center;
+                            }
+
+                            input[type="tel"]:first-child{
+                                margin-left: 0;
+                            }
+                        }
+
+                        .input-field, .button-container{
+                            width: 100%
+                        }
+                    }
+                }
+            }
+
+            .verify_otp_form_div{
+                
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .login-container{
+        .login_wrapper{
+
+            .login_info_div{
+
+                .welcome_msg_div{
+                    .greet{
+                        font-size: 3vw;
+                    }
+                    .sub-greet{
+                        font-size: 2.5vw;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 450px) and (max-width: 680px){
+    .login-container{
+        .login_wrapper{
+            .main_logo_div{
+    
+                .logo_div{
+    
+                    .logo_img_div{
+                 
+                        width: 80%;
+                    }
+                }
+            }
+            .login_info_div{
+                .welcome_msg_div{
+                    .greet{
+                        font-size: 4.5vw;
+                    }
+                }
+                .login_form_div{
+                    .phone_div{
+                        input[type=text] {
+                            padding: 10px 0px 10px 3px;
+                          }
+                    }
+                    .btn_div{
+                        .login_btn{
+                            padding: 10px 70px;
+                        }
+    
+                    }
+                    .input-container{
+                        .resend_otp_msg{
+                            margin-left: 17%;
+                        }
+                        .input-wrapper{
+                            .input-field{
+                                input[type="tel"]{
+                                    // width: 42px;
+                                    width: 14px;
+                                    padding: 7px;
+                                    margin-left: 3px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+  }
+
+  
+@media screen and (max-width: 459px){
+    .login-container{
+        height: 100vh;
+        overflow: hidden;
+        .login_wrapper{
+            height: inherit;
+            display:block;
+           
+            .main_logo_div{
+                width: 100%;
+                padding-top: 15%;
+            }
+            .login_info_div{
+                height: inherit;
+                display: block;
+                text-align: center;
+                padding-top: 30%;
+                width:100%;
+                background-color: $primary-color;
+                
+                .welcome_msg_div{
+                    font-weight: 500;
+                    font-size: 4vw;
+                    color: $light-color;
+                    .greet{
+                        font-size: 7vw;
+                    }
+                    .sub-greet{
+                        font-size: 4vw;
+                    }
+                }
+               
+                .login_form_div{
+                    .phone_div{
+                        margin-top: 20%;
+                        input[type=text] {
+                            padding: 10px 14px;
+                          }
+                    }
+                    .btn_div{
+                        .login_btn{
+                            background-color: $secondary-color;
+                            padding: 10px 80px;
+                            color: $primary-color;
+                            font-weight: bolder;
+                            border: none;
+                        }
+                    }
+                    .input-container{
+                        background-color: $primary-color;
+                        input[type=number] {
+                            width: 80%;
+                        }
+                        .input-wrapper{
+                            background-color: $primary-color;
+                            .input-field{
+                                margin-left: 10%;
+                                width: 80%;
+                                input[type="tel"]{
+                                    width: 14px;
+                                    padding: 9px;
+                                    margin-left: 3px;
+                                }
+                            }
+                        }
+
+                    }
+                    .action-button-container{
+                        .btn{
+                            width: 80%;
+                            background: $secondary-color;
+                            color: $primary-color;
+                        }
+                    }
+                }
+                
+               
+            }
+      
+
+        }
+    }
+  }

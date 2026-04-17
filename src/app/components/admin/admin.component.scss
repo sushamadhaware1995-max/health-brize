@@ -1,0 +1,21 @@
+@import "../../../../src/assets/theme/variables.scss";
+@import "../../../../src/assets/theme/mixins.scss";
+main{
+  
+  .two-column-layout{
+    padding-top: 60px;
+    @include flex-view;
+    align-items: flex-start;
+
+    .side-nav{
+      -webkit-box-shadow: 10px -8px 5px -8px rgba(14, 19, 36, 1);
+      -moz-box-shadow: 10px -8px 5px -8px rgba(14, 19, 36, 1);
+      box-shadow: 10px -8px 5px -8px rgba(14, 19, 36, 1);
+      z-index: 0;
+    }
+  }
+
+  .contents{
+      width: 100%;
+  }
+}

@@ -1,0 +1,80 @@
+<div class="container">
+    <div class="wrapper">
+        <header class="header">
+            <div class="icon-container">
+                <mat-icon>person</mat-icon>
+            </div>
+            <h1>Dashboard</h1>
+        </header>
+        <app-loader [isLoading]="isLoading"></app-loader>
+        <section>
+            <div class="cards-list">
+                <!-- <div class="card">
+                    <p class="count">{{stats?.bookedOrders}}</p>
+                    <hr>
+                    <p class="label">Booked Orders</p>
+                    <p class="description">List of all employees</p>
+                    <button class="view-button">View All Users <mat-icon>arrow_forward</mat-icon></button>
+                </div>
+                <div class="card">
+                    <p class="count">{{stats?.deliveredOrders}}</p>
+                    <hr>
+                    <p class="label">Delivered Orders</p>
+                    <p class="description">List of all employees</p>
+                    <button class="view-button">View All Users <mat-icon>arrow_forward</mat-icon></button>
+                </div>
+                <div class="card">
+                    <p class="count">{{stats?.listedCategories}}</p>
+                    <hr>
+                    <p class="label">Listed Categories</p>
+                    <p class="description">List of all employees</p>
+                    <button class="view-button">View All Users <mat-icon>arrow_forward</mat-icon></button>
+                </div>
+                <div class="card">
+                    <p class="count">{{stats?.listedProducts}}</p>
+                    <hr>
+                    <p class="label">Listed Products</p>
+                    <p class="description">List of all employees</p>
+                    <button class="view-button">View All Users <mat-icon>arrow_forward</mat-icon></button>
+                </div>
+                <div class="card">
+                    <p class="count">{{stats?.outOfStockProducts}}</p>
+                    <hr>
+                    <p class="label">Out of Stock Products</p>
+                    <p class="description">List of all employees</p>
+                    <button class="view-button">View All Users <mat-icon>arrow_forward</mat-icon></button>
+                </div> -->
+                <div class="card">
+                    <p class="count">{{stats?.totalCategories}}</p>
+                    <hr>
+                    <p class="label">Categories</p>
+                    <button class="view-button">View All Categories <mat-icon routerLink="/healthbrize/admin/categories">arrow_forward</mat-icon></button>
+                </div>
+                <div class="card">
+                    <p class="count">{{stats?.totalOrders}}</p>
+                    <hr>
+                    <p class="label">Orders</p>
+                    <button class="view-button">View All Orders <mat-icon routerLink="/healthbrize/admin/orders">arrow_forward</mat-icon></button>
+                </div>
+                <div class="card">
+                    <p class="count">{{stats?.totalProducts}}</p>
+                    <hr>
+                    <p class="label">Products</p>
+                    <button class="view-button">View All Products <mat-icon routerLink="/healthbrize/admin/products">arrow_forward</mat-icon></button>
+                </div>
+                <div class="card">
+                    <p class="count">{{stats?.totalUsers}}</p>
+                    <hr>
+                    <p class="label">Users</p>
+                    <button class="view-button">View All Users <mat-icon routerLink="/healthbrize/admin/users/all-users">arrow_forward</mat-icon></button>
+                </div>
+                <div class="card">
+                    <p class="count">{{stats?.unVerifiedUsers}}</p>
+                    <hr>
+                    <p class="label">UnVerified Users</p>
+                    <button class="view-button">View All UnVerified Users <mat-icon routerLink="/healthbrize/admin/approve-users/approve-user">arrow_forward</mat-icon></button>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

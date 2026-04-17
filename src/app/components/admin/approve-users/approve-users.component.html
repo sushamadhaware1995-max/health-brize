@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="wrapper">
+        <header class="header">
+            <div class="icon-container">
+                <mat-icon>person_add</mat-icon>
+            </div>
+            <div class="sub-heading">
+                <h1>Approve Users</h1>
+                <p>List of Users waiting for Approval. Approve them to enjoy your application</p>
+            </div>
+        </header>
+        <app-loader [isLoading]="isLoading"></app-loader>
+        <div class="data-table">
+            <app-data-table
+                [rowData]="users" 
+                [columnDefs]="columnDefs"
+                [gridOptions]="gridOptions"
+                [rowCount]="rowCount"
+                [columnOptions]="columnDefs"
+                [componentName]="'ApproveUsersComponent'"
+                [isPaginationRequired]="true"
+                [isExportRequired]="false"
+                [isColumnPrefRequired]="true"
+                [fitColumns]= "false" 
+                [isAddActionRequired] = "false"
+                (isActionPerformed)="getActionConfirmation($event)"
+            ></app-data-table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+@mixin flex-view {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex($align, $justify, $wrap, $direction) {
+display: flex;
+align-items: $align;
+justify-content: $justify;
+flex-wrap: $wrap;
+flex-direction: $direction;
+}
+
+@function flex-variables($value){
+  @return $value;
+}
+
+@function setPosition($position-value){
+  @return $position-value;
+}

@@ -1,0 +1,35 @@
+@import "../../../../../src/assets/theme/mixins.scss";
+@import "../../../../../src/assets/theme/variables.scss";
+// @import '../../../../assets/theme/variables.scss';
+// @import '../../../../assets/theme/mixins.scss';
+.container{
+
+    .wrapper{
+
+        .header{
+            background-color: $primary-color;
+            padding: 20px;
+            @include flex(center, unset, no-wrap, row);
+            box-shadow: 1px 1px 1px lightgray;
+
+            .icon-container{
+                background-color: $tertiary-color;
+                border-radius: 4px;
+                box-shadow: 2px 2px 2px grey;
+                padding: 5px 10px;
+            }  
+            
+            .sub-heading{
+
+                h1, p{
+                    color: $tertiary-color;
+                    margin: 0 0 0 10px;
+                }
+            }
+        }
+
+        .data-table{
+            padding: 16px;
+        }
+    }
+}

@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="wrapper">
+        <header class="header">
+            <div class="icon-container">
+                <mat-icon>category</mat-icon>
+            </div>
+            <div class="sub-heading">
+                <h1>Categories</h1>
+                <p>All category details</p>
+            </div>
+        </header>
+        <app-loader [isLoading]="isLoading"></app-loader>
+        <div class="data-table">
+            <app-data-table
+            [rowData]="categories" 
+            [columnDefs]="columnDefs"
+            [gridOptions]="gridOptions"
+            [rowCount]="rowCount"
+            [columnOptions]="columnDefs" 
+            [fileName]="fileName"
+            [isPaginationRequired]="true"
+            [isExportRequired]="true"
+            [isColumnPrefRequired]="true"
+            [fitColumns]= "false" 
+            [isAddActionRequired] = "true"
+            [actionBtnText]= "addUserBtnText"
+            [componentName]= "component"
+            [deleteModalData] = "deleteModalObj"
+            [addActionMsg] = "addActionMsg"
+            [updateActionMsg] = "updateActionMsg"
+            [addBtnIcon] = "addBtnIcon"
+            [columnKeys] = "columnKeys"
+            (isActionPerformed)="getActionConfirmation($event)"
+            ></app-data-table>
+        </div>
+    </div>
+</div>
+    

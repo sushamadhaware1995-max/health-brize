@@ -1,0 +1,58 @@
+@import '../../../../assets/theme/variables.scss';
+
+.container {
+    width: 100vw;
+    height: 112vh;
+    margin: 0;
+    background-color: rgba(19, 29, 71, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    position: absolute;
+    cursor: not-allowed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+  }
+  
+  .loader {
+    width: 8vmax;
+    height: 8vmax;
+    border-right: 4px solid $secondary-color;
+    border-radius: 100%;
+    animation: spinRight 800ms linear infinite;
+    
+    &:before, &:after {
+      content: '';
+      width: 6vmax;
+      height: 6vmax;
+      display: block;
+      position: absolute;
+      top: calc(50% - 3vmax);
+      left: calc(50% - 3vmax);
+      border-left: 3px solid $secondary-color;
+      border-radius: 100%;
+      animation: spinLeft 800ms linear infinite;
+    }
+    
+    &:after {
+      width: 4vmax;
+      height: 4vmax;
+      top: calc(50% - 2vmax);
+      left: calc(50% - 2vmax);
+      border: 0;
+      border-right: 2px solid $secondary-color;
+      animation: none;
+    }
+  }
+  
+  @keyframes spinLeft {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(720deg);}
+  }
+  
+  @keyframes spinRight {
+    from {transform:rotate(360deg);}
+    to {transform:rotate(0deg);}
+  }

@@ -1,0 +1,20 @@
+<div class="modal">
+  <div class="modal-wrapper">
+    <div class="modal-header">
+      <mat-icon class="icon">{{data.modalMsg.icon}}</mat-icon>
+      <mat-icon class="close-icon" (click)="close(false, '')">close</mat-icon>
+    </div>
+    <div class="modal-body">
+      <p class="alert">Are you sure?</p>
+      <p class="message">{{data.modalMsg.msg}}</p>
+      <div class="action-buttons">
+        <button class="btn btn-secondary" (click)="close(false, '')">
+          <span>{{data.modalMsg.cancelButtonText !== '' ? data.modalMsg.cancelButtonText : cancelBtnText}}</span>
+        </button>
+        <button class="btn btn-primary" (click)="close(true, 'delete')">
+          <span>{{data.modalMsg.confirmButtonText !== '' ? data.modalMsg.confirmButtonText : deleteBtnText}}</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

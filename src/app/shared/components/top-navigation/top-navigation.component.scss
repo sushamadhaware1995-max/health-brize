@@ -1,0 +1,85 @@
+@import "../../../../assets/theme/styles-global.scss";
+@import "../../../../assets/theme/mixins.scss";
+
+.side_nav_container{
+    // background-color: $tertiary-color;
+    background-color: $primary-color;
+    box-shadow: 1px 1px 1px #0e1324;
+    padding: 10px 16px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+
+    .side_nav_panel{
+
+        .two-column-layout{
+            @include flex(center, space-between, no-wrap, row);
+
+            .logo_div{
+                @include flex(center, space-between, no-wrap, row);
+
+                img{
+                    width: 100%;
+                }
+
+                .menu-icon{
+                    cursor: pointer;
+                    padding-left: 45px;
+                }
+            }
+
+            .profile_div{
+                display: flex;
+                width:80%;
+                justify-content: flex-end;
+
+                .user_profile{
+                    @include flex(center, space-between, no-wrap, row);
+
+                    p{
+                        // color: $primary-color;
+                        color: $secondary-color;
+                        @include flex(center, space-between, no-wrap, row);
+                        margin: 0 10px;
+
+                        mat-icon{
+                            padding-right: 5px;
+                        }
+                    }
+
+                    mat-icon{
+                        color: $secondary-color;
+                        cursor: pointer;
+                    }
+                }
+
+                mat-menu{
+
+                    button{
+
+                        mat-icon{
+                            margin-right: 0 !important;
+                            margin-left: 10px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.logout-icon{
+    margin-right: 0 !important;
+    margin-left: 10px !important;
+}
+
+::ng-deep .mat-menu-content{
+    min-height: unset !important;
+    padding: 0 !important;
+}
+
+::ng-deep .mat-menu-panel {
+    min-height: unset !important;
+}

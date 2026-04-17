@@ -1,0 +1,26 @@
+:host {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .imageIcon {
+    position: absolute;
+    left: 50%;
+    transform: translateY(50%) translateX(-50%);
+  }
+  
+  .fa-picture-o {
+    font-size: 128px;
+    color: #767676;
+  }
+  
+  .image-loading {
+    min-height: 121px;
+    min-width: 121px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  

@@ -1,0 +1,35 @@
+@import '../../../../assets/theme/variables.scss';
+@import '../../../../assets/theme/mixins.scss';
+
+.container{
+    background-color: #1d2847;
+
+    .wrapper{
+
+        .header{
+            background-color: $primary-color;
+            padding: 20px;
+            @include flex(center, unset, no-wrap, row);
+            box-shadow: 1px 1px 1px #0e1324;
+
+            .icon-container{
+                background-color: $secondary-color;
+                border-radius: 4px;
+                box-shadow: 2px 2px 2px #387c7d;
+                padding: 5px 10px;
+            } 
+            
+            .sub-heading{
+
+                h1, p{
+                    color: $secondary-color;
+                    margin: 0 0 0 10px;
+                }
+            }
+        }
+
+        .data-table{
+            padding: 16px;
+        }
+    }
+}

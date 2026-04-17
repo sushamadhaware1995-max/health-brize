@@ -1,0 +1,68 @@
+@import '../../../../assets/theme/variables.scss';
+
+.modal{
+
+    .modal-wrapper{
+
+        .modal-header{
+            position: relative;
+            text-align: center;
+            
+            .icon{
+                color: $danger;
+                font-size: 3rem;
+                height: unset;
+                width: unset;
+            }
+
+            .close-icon{
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+        }
+
+        .modal-body{
+            text-align: center;
+
+            .alert{
+                color: $text-color;
+                font-size: 1.4rem;
+                font-weight: 300;
+                padding: 10px 0;
+            }
+
+            .message{
+                color: $lighter-color;
+                font-size: 1rem;
+                font-weight: 300;
+                padding-bottom: 10px;
+            }
+
+            .action-buttons{
+
+                .btn-primary{
+                    background-color: transparent;
+                    color: $danger;
+                    border: 1px solid $danger;
+                }
+
+                .btn-primary:hover{
+                    background-color: $danger;
+                    color: $tertiary-color;
+                }
+
+                .btn-secondary{
+                    border: 1px solid $text-color;
+                    background-color: transparent;
+                    color: $text-color;
+                }
+
+                .btn-secondary:hover{
+                    background-color: $text-color;
+                    color: $tertiary-color;
+                }
+            }
+        }
+    }
+}

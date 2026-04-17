@@ -1,0 +1,86 @@
+@import "../../../../../../src/styles.scss";
+@import '../../../../../assets/theme/variables.scss';
+@import '../../../../../assets/theme/mixins.scss';
+
+main {
+
+    .modal-content {
+
+        .modal-title {
+            display: flex;
+            @include flex(center, space-between, no-wrap, row);
+            padding-bottom: 10px;
+
+            .close_icon {
+                cursor: pointer;
+                font-size: 20px;
+            }
+        }
+
+        .modal-body{
+
+            .input-fields-container{
+
+                .row{
+
+                    fieldset{
+                        margin: 10px 0;
+
+                       .input-fields-wrapper{
+                           display: grid;
+                           grid-gap: 10px;
+                           grid-template-columns: auto auto auto;
+                           padding: 8px;
+
+                            .input-field{
+                                margin-bottom: 5px;
+
+                                label{
+                                    display: block;
+                                }
+
+                                input, select{
+                                    border-radius: 4px;
+                                    border: 1px solid ;
+                                    box-sizing: border-box;
+                                    padding: 10px;
+                                    width: 100%;
+                                }
+                            }
+                       } 
+                    }
+                }
+            }
+
+            .action-buttons{
+                text-align: right;
+
+                .btn{
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .user_wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-direction: row;
+
+            .column {
+                padding: 5px;
+                .user_status_div {
+                    margin-top: 44px;
+                }
+            }
+        }
+        .action-btns {
+            float: right;
+            margin-top: $m-2;
+
+            .cancel_btn_margin {
+                margin-left: $m-2;
+            }
+        }
+    }
+}

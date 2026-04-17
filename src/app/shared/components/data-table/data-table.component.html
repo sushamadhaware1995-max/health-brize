@@ -1,0 +1,53 @@
+<div class="action-button-container">
+    <button mat-raised-button class="btn add_action_btn" (click)="refresh()">
+      <span class="button-label">Refresh</span>
+      <mat-icon>refresh</mat-icon>
+    </button>
+    <button *ngIf="isAddActionRequired" mat-raised-button class="btn add_action_btn" (click)= "openAddModal()">
+      <span class="button-label">{{actionBtnText}}</span>
+      <mat-icon> {{addBtnIcon}}</mat-icon>
+    </button>
+    <button *ngIf="isExportRequired" mat-raised-button class="btn column-chooser" (click)="onBtnExport()">
+      <span class="button-label">Download</span>
+      <mat-icon>download</mat-icon>
+    </button>
+  </div>
+  
+  <div *ngIf="isShowHeader" class="quick_filter shadow">
+      <span class="material-icons fa fa-filter">filter_alt</span>
+      <div class="quick-search-input">
+        <input
+          #input
+          type="text"
+          placeholder="Search..."
+          (input)="onSearchTextChanged($event)"
+          [(ngModel)]="searchText"
+          value="{{ searchText }}"
+        />
+        <span 
+          class="material-icons fa fa-search" 
+          *ngIf="searchText.length == 0">search</span>
+        <span 
+          class="material-icons fa fa-times" 
+          aria-hidden="true"
+          *ngIf="searchText.length > 0"
+          (click)="onClearSearchText()">clear</span>
+      </div>
+      <em *ngIf="input.value.length > 0"><b>Filter: </b>{{ input.value }}</em>
+      <em *ngIf="input.value.length == 0">No Filter Applied</em>
+      <span class="row_count"> {{ rowCount }} Rows</span>
+    </div>
+  
+  <ag-grid-angular  
+    style="width: 100%; height: 400px"
+    class="ag-theme-alpine"
+    [gridOptions]="gridOptions"
+    [rowData]="rowData"
+    [columnDefs]="columnDefs"
+    [enableColResize]="true"
+    [groupHeaderHeight]= "40"
+    rowSelection="multiple"
+    (selectionChanged)="onSelectionChanged($event)"
+    (cellClicked) = "rowClicked($event)"
+  >
+  </ag-grid-angular>

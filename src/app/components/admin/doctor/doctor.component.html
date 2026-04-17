@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="wrapper">
+        <header class="header">
+            <div class="icon-container">
+                <mat-icon>person</mat-icon>
+            </div>
+            <div class="sub-heading">
+                <h1>Doctors</h1>
+                <p>All verified doctor details. Here you can add, update, delete, view doctor details.</p>
+            </div>
+        </header>
+        <app-loader [isLoading]="isLoading"></app-loader>
+        <div class="data-table">
+            <app-data-table
+            [rowData]="doctors" 
+            [columnDefs]="columnDefs"
+            [gridOptions]="gridOptions"
+            [rowCount]="rowCount"
+            [columnOptions]="columnDefs" 
+            [fileName]="fileName"
+            [isPaginationRequired]="true"
+            [isExportRequired]="true"
+            [isColumnPrefRequired]="true"
+            [fitColumns]= "false" 
+            [isAddActionRequired] = "true"
+            [actionBtnText]= "addUserBtnText"
+            [componentName]= "component"
+            [deleteModalData] = "deleteModalObj"
+            [addActionMsg] = "addActionMsg"
+            [updateActionMsg] = "updateActionMsg"
+            [addBtnIcon] = "addBtnIcon"
+            [columnKeys] = "columnKeys"
+           
+        ></app-data-table>
+        </div>
+    </div>
+</div>

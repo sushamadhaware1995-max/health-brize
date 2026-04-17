@@ -1,0 +1,39 @@
+@import '../../../../../../admin/src/assets/theme/variables.scss';
+.block_status{
+    background: $danger;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    padding: 5px 16px;
+    font-size: 12px;
+}
+
+.unblock_status{
+    background: $success;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    padding: 5px 9px;
+    font-size: 12px;
+}
+
+.button{
+    border: none;
+    border-radius: 4px;
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.pending{
+    background: $pending;
+}
+
+.completed{
+    background: $success;
+    cursor: not-allowed;
+}
+
+.rejected{
+    background: $danger;
+}

@@ -1,0 +1,62 @@
+<main>
+    <div class="modal-content">
+      <div class="modal-title">
+        <h2>{{title}}</h2>
+        <mat-icon class="close_icon" (click)="closeDialog()">close</mat-icon>
+      </div>
+      <app-loader [isLoading]="isLoading"></app-loader>
+      <form  [formGroup]="subCategoryForm" (ngSubmit)="onSubmit(subCategoryForm.value)" class="modal-body">
+        <div class="input-fields-container">
+          <div class="row">
+            <fieldset>
+              <legend>SubCategory Details:</legend>
+              <div class="input-fields-wrapper">
+                <div class="input-field">
+                  <label for="code">Select Category</label>
+                  <select formControlName="categoryId" id="code" (change)="selectedCategory($event)">
+                      <option *ngFor="let category of categories" [value]="category._id">{{category.name}}</option>
+                  </select>
+              </div>
+                <div class="input-field">
+                  <label for="name">Name</label>
+                  <input type="text" placeholder="Name" formControlName="name" id="name">
+                </div>
+                <div class="input-field">
+                  <label for="description">Description</label>
+                  <input type="text" placeholder="Description" formControlName="description" id="description">
+                </div>
+                <!-- <div class="input-field">
+                  <label for="purities">Purities</label>
+                  <div class="array-input">
+                    <input type="text" placeholder="Purity" formControlName="purities" id="purities" *ngIf="modaldata.action !== 'viewOnly'">
+                    <div class="chips-container">
+                      <span *ngFor="let purity of purities;" class="chips">{{purity}} <mat-icon (click)="removePurity(purity)" *ngIf="modaldata.action !== 'viewOnly'">close</mat-icon></span>
+                    </div>
+                    <button type="button" (click)="addPurity()" class="btn btn-primary" *ngIf="modaldata.action !== 'viewOnly'"><span>Add Purity</span></button>
+                  </div>
+                </div> -->
+                <input type="file" id="upload" accept="image/*" (change)="onSelectFile($event)" hidden/>
+                <label for="upload" class="upload" *ngIf="modaldata.action !== 'viewOnly'">
+                  <span>Upload File</span>
+                  <mat-icon>upload</mat-icon>
+                </label>
+                <div class="image_preview" *ngIf="imageFile">
+                  <img [src]="imageFile" alt="category" />
+                </div>
+                <div class="input-field list">
+                  <input type="checkbox" placeholder="Description" formControlName="isListed" id="list">
+                  <span>List SubCategory</span>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+        <div class="action-buttons" >
+          <button class="btn btn-secondary" type="button" (click)="closeDialog()">{{cancelButtonText}}</button>
+          <button *ngIf="!currentAction" class="btn btn-primary" type="submit">{{buttonText}}</button>
+        </div>
+      </form>
+    </div>
+  </main>
+  
+  

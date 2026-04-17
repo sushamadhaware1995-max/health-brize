@@ -1,0 +1,62 @@
+<aside>
+  <div class="container">
+    <div class="wrapper" [ngClass]="isFullView?'full-view':'icon-view'">
+      <div class="sidenav">
+        <div class="profile-container">
+          <div class="profile-wrapper">
+            <div class="profile-detail-wrapper">
+              <div class="picture-container">
+                <!-- <img
+                  src="./assets/images/backgrounds/logo.png"
+                  alt="logo"
+                /> -->
+              </div>
+            </div>
+            <div class="actions">
+              <mat-icon>person</mat-icon>
+              <mat-icon>email</mat-icon>
+              <mat-icon>power_settings_new</mat-icon>
+            </div>
+          </div>
+        </div>
+        <ul class="sidenav-wrapper">
+          <div class="toggle-div">
+            <button (click)="toggleView()">
+              <mat-icon class="toggle-icon">menu</mat-icon>
+            </button>
+          </div>
+          <li class="navigation-items" *ngFor="let items of navigationItems; let i = index">
+            <a class="items" (click)="expandSubMenu(items, i);navigate(items.name, i)" routerLink="{{ items.route }}"
+             
+              [ngClass]="i === selectedSidenavIndex ? 'active': ''">
+              <!--  routerLinkActive="active" -->
+              <mat-icon>{{ items.icon }}</mat-icon>
+              <span *ngIf="isFullView">{{ items.name }}</span>
+              <mat-icon *ngIf="items.isSubItemPresent" class="expand-more-icon">{{
+                expandSubNavMenu && parentMenu === items.name ? "expand_less" : "expand_more"
+                }}</mat-icon>
+            </a>
+            <div class="sub-navigation-container" *ngIf="expandSubNavMenu && parentMenu === items.name">
+              <div *ngFor="let subMenu of items.submenu" class="sub-navigation-items">
+                <a class="sub-navigation-wrapper" routerLink="{{ subMenu.route }}" routerLinkActive="sub-active"
+                  [routerLinkActiveOptions]="{exact: true}">
+                  <mat-icon>{{ subMenu.icon }}</mat-icon>
+                  <span>{{ subMenu.name }}</span>
+                </a>
+              </div>
+            </div>
+          </li>
+          <!-- <li class="navigation-items">
+            <a
+              class="items"
+              (click)="logout()"
+            >
+              <mat-icon>logout</mat-icon>
+              <span *ngIf="isFullView">Logout</span>
+            </a>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+  </div>
+</aside>

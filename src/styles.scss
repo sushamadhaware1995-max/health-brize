@@ -1,0 +1,262 @@
+/* You can add global styles to this file, and also import other style files */
+@import "ag-grid-community/dist/styles/ag-grid.css";
+@import "ag-grid-community/dist/styles/ag-theme-alpine.css";
+@import "./assets/theme/variables.scss";
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+h1 ,h2, h3, h4, h5, h6, p{ margin: 0;}
+//overiding ag theme
+.ag-theme-alpine {
+    .ag-header-container{
+      background-color: #FFFFFF;
+    }
+    .ag-header-cell-label .ag-header-cell-text {
+      white-space: normal !important;
+    }
+    .ag-cell{
+      color: rgb(83,86,90);
+    }
+    .ag-cell-focus,.ag-cell-no-focus{
+      border:none !important;
+    }
+
+  }
+
+  .btn-primary{
+    
+  }
+
+  // form {
+  //   label{
+  //     // color: $tertiary-color;
+  //     font-size: 14px;
+  //     // margin-bottom: 5px;
+  //   }
+  //   input[type="text"]{
+  //     padding: 10px;
+  //     border-radius: 10px;
+  //     border: none;
+  //   }
+  //   input[type="email"]{
+  //     padding: 10px;
+  //     border-radius: 10px;
+  //     border: none;
+  //   }
+  //   input[type="date"]{
+  //     padding: 8px 60px 10px 10px;
+  //     border-radius: 10px;
+  //     border: none;
+  //   }
+  //   input[type="number"]{
+  //     padding: 10px;
+  //     border-radius: 10px;
+  //     border: none;
+  //   }
+  // }
+
+  // .m-5{
+  //   margin: 5px;
+  // }
+  .mt-15{
+    margin-top: 1rem;
+  }
+
+  .submit-button{
+    background: $super-tertiary-color;
+    font-size: 1rem;
+    // padding: 5px 20px;
+    // font-size: 15px;
+    // border-radius: 8px;
+    // border: none;
+    // font-weight: bold;
+    // margin: 5px;
+  }
+  .submit-button:disabled{
+    background: $text-color;
+    padding: 5px 20px;
+    font-size: 15px;
+    border-radius: 8px;
+    border: none;
+    // font-weight: bold;
+    margin: 5px;
+    color: $tertiary-color;
+  }
+  .cancel-button{
+    background: $secondary-color;
+    font-size: 1rem;
+    // padding: 5px 20px;
+    // font-size: 15px;
+    // border-radius: 8px;
+    // border: none;
+    // font-weight: bold;
+    // margin: 5px;
+  }
+  .delete_button{
+    background: $danger;
+    font-size: 1rem;
+    color: white;
+    // padding: 5px 20px;
+    // font-size: 15px;
+    // border-radius: 8px;
+    // border: none;
+    // font-weight: bold;
+    // margin: 5px;
+  }
+  // #C80000 
+  .mat-dialog-container{
+    color: $text-color;
+    padding: 15px !important;
+  }
+  .error_msg{
+    font-size: 10px;
+    color: $danger;
+  }
+
+  // Success Error State 
+
+.success{
+  background-color: $success;
+  color: $light-color;
+}
+
+.error{
+  background-color: $danger;
+  color: $light-color;
+}
+
+/** Global Buttons **/
+
+.btn{
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 10px;
+}
+
+.btn-primary{
+  background-color: $primary-color;
+  border: 1px solid $primary-color;
+  color: $tertiary-color;
+  margin-left: 10px;
+}
+
+.btn-primary:hover{
+  background-color: transparent;
+  color: $primary-color;
+}
+
+.btn-secondary{
+  background-color: $tertiary-color;
+  border: 1px solid transparent;
+  color: $primary-color;
+}
+
+.btn-secondary:hover{
+  background-color: transparent;
+  border: 1px solid $primary-color;
+}
+  
+ 
+//custom scroll bar
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #FFFFFF; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+//custom scroll bar
+/* width */
+::-webkit-scrollbar {
+  width: -1px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  // height: 5px;
+  // background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+.mat-tab-label{
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+} 
+/** Hide arrow in number type **/ 
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/** Show red border on error **/ 
+
+input.ng-invalid.ng-touched{
+  border: 1px solid $danger;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+input.ng-invaid.ng-touched{
+  border: 1px solid var(--hb-danger);
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.row-fail {
+  background-color: #fc766d !important;
+}
+
+.row-pass {
+  background-color: none !important;
+}

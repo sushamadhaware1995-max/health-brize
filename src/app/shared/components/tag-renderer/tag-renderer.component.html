@@ -1,0 +1,5 @@
+<span class="container" *ngFor="let value of values">
+    <button class="text" [ngStyle]="{'background-color': (value === 'delivered') ? '#4BB543' : (value === 'booked') ? '#F29339' : (value === 'canceled') ? '#D9512C' : '#df79f0'}">{{value}}</button>
+ </span>
+
+ 

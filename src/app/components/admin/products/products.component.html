@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="wrapper">
+        <header class="header">
+            <div class="icon-container">
+                <mat-icon>inventory</mat-icon>
+            </div>
+            <h1>Products</h1>
+        </header>
+        <app-loader [isLoading]="isLoading"></app-loader>
+        <div class="data-table">
+            <app-data-table
+            [rowData]="products" 
+            [columnDefs]="columnDefs"
+            [gridOptions]="gridOptions"
+            [rowCount]="rowCount"
+            [columnOptions]="columnDefs" 
+            [fileName]="fileName"
+            [isPaginationRequired]="true"
+            [isExportRequired]="true"
+            [isColumnPrefRequired]="true"
+            [fitColumns]= "false" 
+            [isAddActionRequired] = "true"
+            [addBtnIcon] = "addBtnIcon"
+            [actionBtnText]= "addUserBtnText"
+            [deleteModalData] = "deleteModalObj"
+            [componentName]= "component"
+            [columnKeys] = "columnKeys"
+            (isActionPerformed)="getActionConfirmation($event)"
+            ></app-data-table>
+        </div>
+    </div>
+</div>
+<!-- [deleteModalData] = "deleteModalObj"
+[addActionMsg] = "addActionMsg"
+[updateActionMsg] = "updateActionMsg"
+[addBtnIcon] = "addBtnIcon"
+[columnKeys] = "columnKeys" -->

@@ -1,0 +1,61 @@
+// Colors
+
+$primary-color: #131D47;
+$secondary-color: #5EDADB;
+$tertiary-color: #FFFFFF;
+$label-color: #CDC8C8;
+$link: #0328C2;
+$super-tertiary-color: #f4a340;
+$light-color: #ffffff;
+$lighter-color: #A7A7AF;
+$text-color: rgb(117,120,123);
+$danger: #C80000 ;
+$pending: #F29339;
+$success: #4BB543;
+$black-color: #000000;
+$tag-color: #DA70D6;
+$action-color: #0047AB;
+
+// Background Colors
+
+$gradient-background: linear-gradient(180deg, $primary-color 0%, $secondary-color);
+$light-background: #F7F7F7;
+$lightest-background: lightgrey;
+
+// Text Color Variables
+
+$dark-text: #262626;
+$light-text: #979797;
+
+// Primary Button Variables
+
+$primary-button-bg-color: linear-gradient(180deg, rgba(253,126,20,1) 0%, rgba(255,193,7,1) 100%);
+$primary-button-color: rgba(255,193,7,1);
+$secondary-button-bg-color:  linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(108,117,125,1) 100%);
+
+// Tabs Gradient
+
+$tab-gradient: linear-gradient(180deg, $secondary-color 0%, $secondary-color 100%);
+
+// Border Variables
+
+$border-none: none;
+
+// Border Radius Varables
+
+$border-radius-circle: 50%;
+
+// Padding Variables
+
+$p-0: 0;
+$p-1: 1rem;
+$p-2: 2rem;
+$p-3: 3rem;
+
+// Margin Variables
+
+$m-0: 0;
+$m-1: 0.5rem;
+$m-2: 1rem;
+$m-3: 2rem;
+$m-4: 3rem;
